@@ -10,12 +10,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/authconfig.interceptor';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReqresUserComponent } from './modules/reqres-user/reqres-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    ReqresUserComponent,
   ],
   imports: [
     BrowserModule,

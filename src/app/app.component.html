@@ -2,7 +2,7 @@
   <h5>Dennis Lean Simple App</h5>
 
   <nav>
-    <a *ngIf="this.authService.isLoggedIn">User Profile</a>
+    <a *ngIf="this.authService.isLoggedIn" routerLinkActive="active" routerLink="/home">Home</a>
     <a *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="/login">Login</a>
   </nav>
 

@@ -36,6 +36,10 @@ export class LoginComponent implements OnInit {
       username: [''],
       password: [''],
     });
+
+    if (this.authService.isLoggedIn) {
+      this.router.navigate(['home']);
+    }
   }
 
   /**
