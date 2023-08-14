@@ -12,9 +12,7 @@ export interface LoginCredential {
 /**
  *
  */
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
   /**
    *
@@ -27,7 +25,7 @@ export class AuthService {
   private readonly LOCAL_STORAGE_AUTH_TOKEN: string = 'auth_token';
 
   /**
-   * NOTE: Temporary allow public to show in login page for demo purpose.
+   * NOTE: For demo purpose.
    */
   public static readonly credential: LoginCredential = {
     username: 'user123',
@@ -48,7 +46,6 @@ export class AuthService {
       loginCredential.password === AuthService.credential.password
     ) {
       localStorage.setItem(this.LOCAL_STORAGE_AUTH_TOKEN, '----access-token-value-from-auth-api-reponse----');
-
       this.handleLoginSuccessful();
 
       return true;

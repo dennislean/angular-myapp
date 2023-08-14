@@ -28,15 +28,12 @@ export interface ReqresUser {
 /**
  *
  */
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class ReqresUserService {
   /**
    *
    */
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   /**
    *

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AuthService, LoginCredential } from './../../shared/auth.service';
 import { Router } from '@angular/router';
+import { AuthService, LoginCredential } from 'src/app/shared/auth/auth.service';
 
+/**
+ *
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   /**
@@ -18,6 +20,11 @@ export class LoginComponent implements OnInit {
    *
    */
   errorMessage: string = '';
+
+  /**
+   *
+   */
+  isLoading: boolean = false;
 
   /**
    * NOTE: For demo purpose only.
@@ -51,13 +58,15 @@ export class LoginComponent implements OnInit {
    *
    */
   async loginUser() {
-    console.log('Running loginUser');
-    this.errorMessage = 'Logging in...';
+    this.errorMessage = '';
+    this.isLoading = true;
 
     const loginSuccessful: boolean = await this.authService.login(this.loginForm.value);
 
+    this.isLoading = false;
+
     if (!loginSuccessful) {
-      this.errorMessage = 'Login unsuccessful.';
+      this.errorMessage = 'Login failed. Please try again.';
     }
   }
 }

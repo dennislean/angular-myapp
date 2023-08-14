@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './modules/login/login.component';
+import { HomeComponent } from './modules/home/home.component';
+import { authGuard } from './shared/auth/auth.guard';
 
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-
-import { authGuard } from './shared/auth.guard';
-
+/**
+ *
+ */
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -16,9 +17,11 @@ const routes: Routes = [
   },
 ];
 
+/**
+ *
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-
-export class AppRoutingModule {}
+export class AppRoutingModule { }

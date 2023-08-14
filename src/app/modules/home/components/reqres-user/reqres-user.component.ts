@@ -8,7 +8,6 @@ import { ReqresUser, ReqresUserResponse, ReqresUserService } from './reqres-user
 @Component({
   selector: 'app-reqres-user',
   templateUrl: './reqres-user.component.html',
-  styleUrls: ['./reqres-user.component.css'],
 })
 export class ReqresUserComponent implements OnInit {
   /**
